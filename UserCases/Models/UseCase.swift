@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+
 enum Priority: String, CaseIterable, PersistableEnum
 {
     case low = "Low"

@@ -17,6 +17,8 @@
 		882C74E7286CCC9B00590A2D /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74E6286CCC9B00590A2D /* UseCase.swift */; };
 		882C74E9286D024A00590A2D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74E8286D024A00590A2D /* Step.swift */; };
 		882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74ED286D318C00590A2D /* AddEntryView.swift */; };
+		882C74F0286E72F100590A2D /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74EF286E72F100590A2D /* TextInputField.swift */; };
+		882C74F3286F4DB200590A2D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 882C74F2286F4DB200590A2D /* Neumorphic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		882C74E6286CCC9B00590A2D /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		882C74E8286D024A00590A2D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		882C74ED286D318C00590A2D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
+		882C74EF286E72F100590A2D /* TextInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +41,7 @@
 			files = (
 				882C74E0286BD76E00590A2D /* RealmSwift in Frameworks */,
 				882C74DE286BD76E00590A2D /* Realm in Frameworks */,
+				882C74F3286F4DB200590A2D /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 		882C74CD286BD0C000590A2D /* UserCases */ = {
 			isa = PBXGroup;
 			children = (
+				882C74EF286E72F100590A2D /* TextInputField.swift */,
 				882C74EA286D315800590A2D /* Views */,
 				882C74E5286CCC5D00590A2D /* Models */,
 				882C74E2286CB95500590A2D /* Managers */,
@@ -126,6 +131,7 @@
 			packageProductDependencies = (
 				882C74DD286BD76E00590A2D /* Realm */,
 				882C74DF286BD76E00590A2D /* RealmSwift */,
+				882C74F2286F4DB200590A2D /* Neumorphic */,
 			);
 			productName = UserCases;
 			productReference = 882C74CB286BD0C000590A2D /* UserCases.app */;
@@ -157,6 +163,7 @@
 			mainGroup = 882C74C2286BD0C000590A2D;
 			packageReferences = (
 				882C74DC286BD76E00590A2D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				882C74F1286F4DB200590A2D /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = 882C74CC286BD0C000590A2D /* Products */;
 			projectDirPath = "";
@@ -189,6 +196,7 @@
 				882C74E9286D024A00590A2D /* Step.swift in Sources */,
 				882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */,
 				882C74CF286BD0C000590A2D /* UserCasesApp.swift in Sources */,
+				882C74F0286E72F100590A2D /* TextInputField.swift in Sources */,
 				882C74E4286CB96800590A2D /* RealmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +406,14 @@
 				kind = branch;
 			};
 		};
+		882C74F1286F4DB200590A2D /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -410,6 +426,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 882C74DC286BD76E00590A2D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		882C74F2286F4DB200590A2D /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882C74F1286F4DB200590A2D /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

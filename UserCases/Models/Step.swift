@@ -7,9 +7,3 @@
 
 import Foundation
 import RealmSwift
-
-class Step
-{
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted title: String
-}
