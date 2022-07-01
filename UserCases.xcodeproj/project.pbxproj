@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		882C74CF286BD0C000590A2D /* UserCasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74CE286BD0C000590A2D /* UserCasesApp.swift */; };
-		882C74D1286BD0C000590A2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74D0286BD0C000590A2D /* ContentView.swift */; };
 		882C74D3286BD0C100590A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882C74D2286BD0C100590A2D /* Assets.xcassets */; };
 		882C74D6286BD0C100590A2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882C74D5286BD0C100590A2D /* Preview Assets.xcassets */; };
 		882C74DE286BD76E00590A2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 882C74DD286BD76E00590A2D /* Realm */; };
@@ -19,12 +18,12 @@
 		882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74ED286D318C00590A2D /* AddEntryView.swift */; };
 		882C74F0286E72F100590A2D /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74EF286E72F100590A2D /* TextInputField.swift */; };
 		882C74F3286F4DB200590A2D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 882C74F2286F4DB200590A2D /* Neumorphic */; };
+		882C74F5286F546000590A2D /* UseCasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F4286F546000590A2D /* UseCasesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		882C74CB286BD0C000590A2D /* UserCases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserCases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		882C74CE286BD0C000590A2D /* UserCasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCasesApp.swift; sourceTree = "<group>"; };
-		882C74D0286BD0C000590A2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		882C74D2286BD0C100590A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		882C74D5286BD0C100590A2D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		882C74E3286CB96800590A2D /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		882C74E8286D024A00590A2D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		882C74ED286D318C00590A2D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		882C74EF286E72F100590A2D /* TextInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		882C74F4286F546000590A2D /* UseCasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,6 @@
 				882C74E5286CCC5D00590A2D /* Models */,
 				882C74E2286CB95500590A2D /* Managers */,
 				882C74CE286BD0C000590A2D /* UserCasesApp.swift */,
-				882C74D0286BD0C000590A2D /* ContentView.swift */,
 				882C74D2286BD0C100590A2D /* Assets.xcassets */,
 				882C74D4286BD0C100590A2D /* Preview Content */,
 			);
@@ -108,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				882C74ED286D318C00590A2D /* AddEntryView.swift */,
+				882C74F4286F546000590A2D /* UseCasesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,10 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				882C74D1286BD0C000590A2D /* ContentView.swift in Sources */,
 				882C74E7286CCC9B00590A2D /* UseCase.swift in Sources */,
 				882C74E9286D024A00590A2D /* Step.swift in Sources */,
 				882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */,
+				882C74F5286F546000590A2D /* UseCasesView.swift in Sources */,
 				882C74CF286BD0C000590A2D /* UserCasesApp.swift in Sources */,
 				882C74F0286E72F100590A2D /* TextInputField.swift in Sources */,
 				882C74E4286CB96800590A2D /* RealmManager.swift in Sources */,

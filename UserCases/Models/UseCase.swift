@@ -21,5 +21,5 @@ class UseCase: Object, Identifiable
     @Persisted var title: String = "" // replace with Constants.EMPTY_STRING?
     @Persisted var isCompleted: Bool = false
     @Persisted var priority: Priority = .medium
-    
+    //@Persisted var steps: List<Step>
 }

@@ -7,3 +7,9 @@
 
 import Foundation
 import RealmSwift
+/*
+ class Step: Object, Identifiable
+ {
+ // @Persisted(primaryKey: true) var _id = ObjectId
+ }
+ */

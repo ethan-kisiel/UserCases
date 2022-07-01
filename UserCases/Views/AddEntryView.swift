@@ -22,8 +22,6 @@ struct AddEntryView: View
         {
             VStack
             {
-                TextInputField("Title", text: $title)
-                
                 Picker("Priority", selection: $priority)
                 {
                     ForEach(Priority.allCases, id: \.self)
@@ -31,24 +29,38 @@ struct AddEntryView: View
                         priority in
                         Text(priority.rawValue)
                     }
-                }.pickerStyle(.segmented)
-                
-                if !title.isEmpty
-                {
-                    Button(action: {
-                        let useCase = UseCase()
-                        useCase.title = title
-                        useCase.priority = priority
-                        
-                        $useCases.append(useCase)
-                        
-                        title = ""
-                    })
-                    {
-                        Text("Save")
-                    }
-                    .softButtonStyle(RoundedRectangle(cornerRadius: 20), padding: 15)
                 }
+                .pickerStyle(.segmented)
+                .padding(5)
+                
+                HStack(spacing: 5)
+                {
+                    TextInputField("Title", text: $title).padding(5)
+                    
+                    
+                    if !title.isEmpty
+                        {
+                        Button(action: {
+                            let useCase = UseCase()
+                            useCase.title = title
+                            useCase.priority = priority
+                            
+                            $useCases.append(useCase)
+                            
+                            title = ""
+                            priority = .medium
+                        })
+                        {
+                            Text("Save")
+                        }
+                        .softButtonStyle(RoundedRectangle(cornerRadius: 20), padding: 15)
+                        .padding(10)
+                    }
+                }
+    
+                UseCasesView().padding(5)
+                Spacer()
+                .navigationTitle("Add Use Case")
             }
         }
     }
