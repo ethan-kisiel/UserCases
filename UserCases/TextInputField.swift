@@ -12,13 +12,15 @@ import SwiftUI
 struct TextInputField: View
 {
     @Binding var text: String
+    var isFocused: FocusState<Bool>.Binding
     
     var title: String
     
-    init(_ title: String, text: Binding<String>)
+    init(_ title: String, text: Binding<String>, isFocused: FocusState<Bool>.Binding)
     {
         self.title = title
         self._text = text
+        self.isFocused = isFocused
     }
     
     var body: some View
@@ -30,13 +32,15 @@ struct TextInputField: View
                 Text(title + ":")
                     .foregroundColor(text.isEmpty ? .secondary : .secondary)
                     .fontWeight(.bold)
-                    .offset(x: text.isEmpty ? 0 : 10, y: text.isEmpty ? 0 : -30)
+                    .offset(x: text.isEmpty ? 0 : 5, y: text.isEmpty ? 0 : -30)
                     .scaleEffect(text.isEmpty ? 1 : 1, anchor: .leading)
                 
                 TextField(title, text: $text)
                     .textFieldStyle(.roundedBorder)
+                    .focused(self.isFocused)
             }
             .padding(.top, 15)
         }
     }
 }
+

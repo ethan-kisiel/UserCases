@@ -14,14 +14,26 @@ struct AddEntryView: View
     @State private var title: String = ""
     @State private var priority: Priority = .medium
     
+    @FocusState var isFocused: Bool
+    init()
+    {
+        self.isFocused = false
+    }
+    
     @ObservedResults(UseCase.self) var useCases: Results<UseCase>
     
     var body: some View
     {
         NavigationView
         {
-            VStack
+            VStack(alignment: .leading)
             {
+                Text("Priority:")
+                    .foregroundColor(.secondary)
+                    .fontWeight(.bold)
+                    .offset(x: 5)
+                    .scaleEffect(1, anchor: .leading)
+                
                 Picker("Priority", selection: $priority)
                 {
                     ForEach(Priority.allCases, id: \.self)
@@ -35,11 +47,10 @@ struct AddEntryView: View
                 
                 HStack(spacing: 5)
                 {
-                    TextInputField("Title", text: $title).padding(5)
-                    
+                    TextInputField("Title", text: $title, isFocused: $isFocused).padding(5)
                     
                     if !title.isEmpty
-                        {
+                    {
                         Button(action: {
                             let useCase = UseCase()
                             useCase.title = title
@@ -49,6 +60,7 @@ struct AddEntryView: View
                             
                             title = ""
                             priority = .medium
+                            isFocused = false
                         })
                         {
                             Text("Save")

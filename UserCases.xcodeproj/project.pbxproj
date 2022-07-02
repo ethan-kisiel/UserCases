@@ -19,6 +19,7 @@
 		882C74F0286E72F100590A2D /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74EF286E72F100590A2D /* TextInputField.swift */; };
 		882C74F3286F4DB200590A2D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 882C74F2286F4DB200590A2D /* Neumorphic */; };
 		882C74F5286F546000590A2D /* UseCasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F4286F546000590A2D /* UseCasesView.swift */; };
+		882C74F7286F68C500590A2D /* UseCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F6286F68C500590A2D /* UseCaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		882C74ED286D318C00590A2D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		882C74EF286E72F100590A2D /* TextInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		882C74F4286F546000590A2D /* UseCasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesView.swift; sourceTree = "<group>"; };
+		882C74F6286F68C500590A2D /* UseCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				882C74ED286D318C00590A2D /* AddEntryView.swift */,
 				882C74F4286F546000590A2D /* UseCasesView.swift */,
+				882C74F6286F68C500590A2D /* UseCaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882C74F7286F68C500590A2D /* UseCaseView.swift in Sources */,
 				882C74E7286CCC9B00590A2D /* UseCase.swift in Sources */,
 				882C74E9286D024A00590A2D /* Step.swift in Sources */,
 				882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */,
@@ -326,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UserCases/Preview Content\"";
+				DEVELOPMENT_TEAM = 9F6398P4YJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -333,6 +338,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UserCases/Preview Content\"";
+				DEVELOPMENT_TEAM = 9F6398P4YJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -361,6 +368,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
