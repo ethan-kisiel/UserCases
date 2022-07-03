@@ -11,15 +11,18 @@ import SwiftUI
 
 struct AddEntryView: View
 {
+    @ObservedRealmObject var currentUser: UserModel
+    
     @State private var title: String = ""
     @State private var priority: Priority = .medium
     
     @FocusState var isFocused: Bool
-    init()
+    init(_ currentUser: UserModel)
     {
-        self.isFocused = false
+        self.currentUser = currentUser
+        isFocused = false
     }
-    
+
     @ObservedResults(UseCase.self) var useCases: Results<UseCase>
     
     var body: some View
@@ -33,7 +36,7 @@ struct AddEntryView: View
                     .fontWeight(.bold)
                     .offset(x: 5)
                     .scaleEffect(1, anchor: .leading)
-                
+
                 Picker("Priority", selection: $priority)
                 {
                     ForEach(Priority.allCases, id: \.self)
@@ -44,19 +47,20 @@ struct AddEntryView: View
                 }
                 .pickerStyle(.segmented)
                 .padding(5)
-                
+
                 HStack(spacing: 5)
                 {
                     TextInputField("Title", text: $title, isFocused: $isFocused).padding(5)
-                    
+
                     if !title.isEmpty
                     {
                         Button(action: {
                             let useCase = UseCase()
                             useCase.title = title
                             useCase.priority = priority
+                            useCase.createdBy = currentUser.username
                             
-                            $useCases.append(useCase)
+                            $currentUser.useCases.append(useCase)
                             
                             title = ""
                             priority = .medium
@@ -69,17 +73,19 @@ struct AddEntryView: View
                         .padding(10)
                     }
                 }
-    
-                UseCasesView().padding(5)
+
+                UseCasesView(currentUser: currentUser).padding(5)
                 Spacer()
-                .navigationTitle("Add Use Case")
+                    .navigationTitle("Add Use Case")
             }
         }
     }
 }
 
-struct AddEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddEntryView()
+struct AddEntryView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
+        AddEntryView(UserModel())
     }
 }

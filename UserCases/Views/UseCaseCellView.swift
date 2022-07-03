@@ -13,28 +13,28 @@ enum Squares: String
     case completed = "square.inset.filled"
 }
 
-struct UseCaseCellView: View {
-
+struct UseCaseCellView: View
+{
     let useCase: UseCase
     @Environment(\.realm) var realm
-    
+
     private func priorityBackground(_ priority: Priority) -> Color
     {
         switch priority
         {
-            case .low:
-                return .green
-            case .medium:
-                return .orange
-            case .high:
-                return .red
-            default:
-                return .blue
+        case .low:
+            return .green
+        case .medium:
+            return .orange
+        case .high:
+            return .red
+        default:
+            return .blue
         }
     }
-    
-    
-    var body: some View {
+
+    var body: some View
+    {
         NavigationLink
         {
             UseCaseView(useCase: useCase)
@@ -43,7 +43,7 @@ struct UseCaseCellView: View {
             HStack
             {
                 let iconName = useCase.isCompleted ? Squares.completed.rawValue : Squares.pending.rawValue
-                
+
                 Image(systemName: iconName)
                     .onTapGesture
                     {
@@ -63,14 +63,13 @@ struct UseCaseCellView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
         }
-
     }
 }
 
 /*
-struct UseCaseView_Previews: PreviewProvider {
-    static var previews: some View {
-        UseCaseCellView(useCase: UseCase())
-    }
-}
-*/
+ struct UseCaseView_Previews: PreviewProvider {
+     static var previews: some View {
+         UseCaseCellView(useCase: UseCase())
+     }
+ }
+ */

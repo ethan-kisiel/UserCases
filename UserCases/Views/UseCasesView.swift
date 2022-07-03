@@ -13,21 +13,29 @@ enum Sections: String, CaseIterable
     case completed = "Completed"
 }
 
-struct UseCasesView: View {
+struct UseCasesView: View
+{
     
     @Environment(\.realm) var realm
+    var currentUser: UserModel
     @ObservedResults(UseCase.self) var useCases: Results<UseCase>
     
+    var userCases: [UseCase]
+    {
+        useCases.filter { $0.createdBy == currentUser.username }
+    }
     var pendingCases: [UseCase]
     {
-        useCases.filter { $0.isCompleted == false }
+        userCases.filter { $0.isCompleted == false }
     }
+
     var completedCases: [UseCase]
     {
-        useCases.filter { $0.isCompleted == true }
+        userCases.filter { $0.isCompleted == true }
     }
-    
-    var body: some View {
+
+    var body: some View
+    {
         List
         {
             ForEach(Sections.allCases, id: \.self)
@@ -36,7 +44,7 @@ struct UseCasesView: View {
                 Section
                 {
                     let filteredCases = section == .pending ? pendingCases : completedCases
-                    
+
                     if filteredCases.isEmpty
                     {
                         switch section
@@ -47,7 +55,7 @@ struct UseCasesView: View {
                             Text("No Completed Use Cases")
                         }
                     }
-                    
+
                     ForEach(filteredCases, id: \._id)
                     {
                         useCase in
@@ -59,13 +67,13 @@ struct UseCasesView: View {
                         {
                             index in
                             let useCase = filteredCases[index]
-                            
+
                             guard let caseToDelete = realm.object(ofType: UseCase.self, forPrimaryKey: useCase._id)
                             else
                             {
                                 return
                             }
-                            
+
                             // delete child Steps
                             for step in caseToDelete.steps
                             {
@@ -74,11 +82,11 @@ struct UseCasesView: View {
                                     realm.delete(step)
                                 }
                             }
-                            
-                            $useCases.remove(caseToDelete)
+
+                            $useCases.remove(useCase)
                         }
                     }
-                } header:{
+                } header: {
                     Text(section.rawValue)
                 }
             }
@@ -87,8 +95,10 @@ struct UseCasesView: View {
     }
 }
 
-struct UseCasesView_Previews: PreviewProvider {
-    static var previews: some View {
-        UseCasesView()
+struct UseCasesView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
+        UseCasesView(currentUser: UserModel())
     }
 }

@@ -9,31 +9,33 @@ import Neumorphic
 import RealmSwift
 import SwiftUI
 
-struct UseCaseView: View {
-
+struct UseCaseView: View
+{
     @ObservedRealmObject var useCase: UseCase
     @State private var stepText: String = ""
-    
+
     @FocusState var isFocused: Bool
     init(useCase: UseCase)
     {
         self.useCase = useCase
-        self.isFocused = false
+        isFocused = false
     }
-    var body: some View {
+
+    var body: some View
+    {
         VStack
         {
             HStack(spacing: 5)
             {
                 TextInputField("Enter Step", text: $stepText, isFocused: $isFocused).padding(5)
-                
+
                 if !stepText.isEmpty
                 {
                     Button(action: {
                         let step = Step()
                         step.text = stepText
                         $useCase.steps.append(step)
-                        
+
                         // Clear the field
                         stepText = ""
                         isFocused = false
@@ -45,7 +47,7 @@ struct UseCaseView: View {
                     .padding(10)
                 }
             }
-            
+
             List
             {
                 ForEach(useCase.steps.indices, id: \.self)
@@ -63,15 +65,17 @@ struct UseCaseView: View {
                 }.onDelete(perform: $useCase.steps.remove)
                 .listStyle(.plain)
             }
-            
+
             .navigationTitle(useCase.title)
-            
+
         }.padding()
     }
 }
 
-struct UseCaseView_Previews: PreviewProvider {
-    static var previews: some View {
+struct UseCaseView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         UseCaseView(useCase: UseCase())
     }
 }

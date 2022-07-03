@@ -8,17 +8,19 @@
 import SwiftUI
 
 @main
-struct UserCasesApp: App {
-    
+struct UserCasesApp: App
+{
     @StateObject private var realmManager = RealmManager.shared
     
-    var body: some Scene {
-        WindowGroup {
+    var body: some Scene
+    {
+        WindowGroup
+        {
             VStack
             {
                 if let configuration = realmManager.configuration, let realm = realmManager.realm
                 {
-                    AddEntryView()
+                    LoginView()
                         .environment(\.realmConfiguration, configuration)
                         .environment(\.realm, realm)
                 }
