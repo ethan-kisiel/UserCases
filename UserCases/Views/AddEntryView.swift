@@ -65,7 +65,7 @@ struct AddEntryView: View
                         {
                             Text("Save")
                         }
-                        .softButtonStyle(RoundedRectangle(cornerRadius: 20), padding: 15)
+                        .softButtonStyle(RoundedRectangle(cornerRadius: 10), padding: 15)
                         .padding(10)
                     }
                 }

@@ -19,7 +19,8 @@
 		882C74F0286E72F100590A2D /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74EF286E72F100590A2D /* TextInputField.swift */; };
 		882C74F3286F4DB200590A2D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 882C74F2286F4DB200590A2D /* Neumorphic */; };
 		882C74F5286F546000590A2D /* UseCasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F4286F546000590A2D /* UseCasesView.swift */; };
-		882C74F7286F68C500590A2D /* UseCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F6286F68C500590A2D /* UseCaseView.swift */; };
+		882C74F7286F68C500590A2D /* UseCaseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C74F6286F68C500590A2D /* UseCaseCellView.swift */; };
+		88EB86192870E3B5000B132E /* UseCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EB86182870E3B5000B132E /* UseCaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 		882C74ED286D318C00590A2D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		882C74EF286E72F100590A2D /* TextInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		882C74F4286F546000590A2D /* UseCasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesView.swift; sourceTree = "<group>"; };
-		882C74F6286F68C500590A2D /* UseCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseView.swift; sourceTree = "<group>"; };
+		882C74F6286F68C500590A2D /* UseCaseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseCellView.swift; sourceTree = "<group>"; };
+		88EB86182870E3B5000B132E /* UseCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,8 @@
 			children = (
 				882C74ED286D318C00590A2D /* AddEntryView.swift */,
 				882C74F4286F546000590A2D /* UseCasesView.swift */,
-				882C74F6286F68C500590A2D /* UseCaseView.swift */,
+				882C74F6286F68C500590A2D /* UseCaseCellView.swift */,
+				88EB86182870E3B5000B132E /* UseCaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,9 +197,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				882C74F7286F68C500590A2D /* UseCaseView.swift in Sources */,
+				882C74F7286F68C500590A2D /* UseCaseCellView.swift in Sources */,
 				882C74E7286CCC9B00590A2D /* UseCase.swift in Sources */,
 				882C74E9286D024A00590A2D /* Step.swift in Sources */,
+				88EB86192870E3B5000B132E /* UseCaseView.swift in Sources */,
 				882C74EE286D318C00590A2D /* AddEntryView.swift in Sources */,
 				882C74F5286F546000590A2D /* UseCasesView.swift in Sources */,
 				882C74CF286BD0C000590A2D /* UserCasesApp.swift in Sources */,

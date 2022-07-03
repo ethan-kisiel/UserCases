@@ -51,7 +51,7 @@ struct UseCasesView: View {
                     ForEach(filteredCases, id: \._id)
                     {
                         useCase in
-                        UseCaseView(useCase: useCase)
+                        UseCaseCellView(useCase: useCase)
                     }.onDelete
                     {
                         indexSet in
@@ -64,6 +64,15 @@ struct UseCasesView: View {
                             else
                             {
                                 return
+                            }
+                            
+                            // delete child Steps
+                            for step in caseToDelete.steps
+                            {
+                                try? realm.write
+                                {
+                                    realm.delete(step)
+                                }
                             }
                             
                             $useCases.remove(caseToDelete)

@@ -29,13 +29,14 @@ class RealmManager: ObservableObject
         user = try await app.login(credentials: Credentials.anonymous)
         
         self.configuration = user?.flexibleSyncConfiguration(initialSubscriptions: {subs in
-            if let _ = subs.first(named: "all-use-cases")
+            if let _ = subs.first(named: "all-use-cases"), let _ = subs.first(named: "all-steps")
             {
                 return
             }
             else
             {
                 subs.append(QuerySubscription<UseCase>(name: "all-use-cases"))
+                subs.append(QuerySubscription<Step>(name: "all-steps"))
             }
         }, rerunOnOpen: true)
         

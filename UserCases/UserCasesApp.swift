@@ -12,7 +12,6 @@ struct UserCasesApp: App {
     
     @StateObject private var realmManager = RealmManager.shared
     
-    
     var body: some Scene {
         WindowGroup {
             VStack

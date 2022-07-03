@@ -2,61 +2,71 @@
 //  UseCaseView.swift
 //  UserCases
 //
-//  Created by Ethan Kisiel on 7/1/22.
+//  Created by Ethan Kisiel on 7/2/22.
 //
 
+import Neumorphic
+import RealmSwift
 import SwiftUI
-
-enum Squares: String
-{
-    case pending = "square"
-    case completed = "square.inset.filled"
-}
 
 struct UseCaseView: View {
 
-    let useCase: UseCase
-    @Environment(\.realm) var realm
+    @ObservedRealmObject var useCase: UseCase
+    @State private var stepText: String = ""
     
-    private func priorityBackground(_ priority: Priority) -> Color
+    @FocusState var isFocused: Bool
+    init(useCase: UseCase)
     {
-        switch priority
-        {
-            case .low:
-                return .green
-            case .medium:
-                return .orange
-            case .high:
-                return .red
-            default:
-                return .blue
-        }
+        self.useCase = useCase
+        self.isFocused = false
     }
-    
-    
     var body: some View {
-        HStack
+        VStack
         {
-            let iconName = useCase.isCompleted ? Squares.completed.rawValue : Squares.pending.rawValue
-            
-            Image(systemName: iconName)
-                .onTapGesture
+            HStack(spacing: 5)
+            {
+                TextInputField("Enter Step", text: $stepText, isFocused: $isFocused).padding(5)
+                
+                if !stepText.isEmpty
                 {
-                    let caseToUpdate = realm.object(ofType: UseCase.self, forPrimaryKey: useCase._id)
-                    try? realm.write
+                    Button(action: {
+                        let step = Step()
+                        step.text = stepText
+                        $useCase.steps.append(step)
+                        
+                        // Clear the field
+                        stepText = ""
+                        isFocused = false
+                    })
                     {
-                        caseToUpdate?.isCompleted.toggle()
+                        Text("Save")
                     }
+                    .softButtonStyle(RoundedRectangle(cornerRadius: 10), padding: 15)
+                    .padding(10)
                 }
-            Text(useCase.title)
-            Spacer()
-            Text(useCase.priority.rawValue)
-                .padding(5)
-                .frame(width: 75)
-                .background(priorityBackground(useCase.priority))
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-        }
+            }
+            
+            List
+            {
+                ForEach(useCase.steps.indices, id: \.self)
+                {
+                    index in
+                    let step = useCase.steps[index]
+                    HStack
+                    {
+                        Text("\(index + 1):")
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.secondary)
+                            .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+                        Text(step.text)
+                    }
+                }.onDelete(perform: $useCase.steps.remove)
+                .listStyle(.plain)
+            }
+            
+            .navigationTitle(useCase.title)
+            
+        }.padding()
     }
 }
 
